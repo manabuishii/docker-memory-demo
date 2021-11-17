@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 /* argument */
 int main(int argc, char *argv[]) {
@@ -8,6 +9,7 @@ int main(int argc, char *argv[]) {
 
     printf("Allocate %ld bytes (= %ldMB) (== %ldGB)\n",size,size/(1024 * 1024), size / (1024 * 1024 * 1024));
     p = (char *)malloc(size);
+    memset(p,'c', size);
     for(;;);
     free(p);
     return 0;
